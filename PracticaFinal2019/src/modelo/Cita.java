@@ -9,6 +9,18 @@ public class Cita {
 	private boolean asistencia;
 	private String observacion;
 
+	public Cita(int id, LocalDate fecha, boolean asistencia, String observacion) {
+		super();
+		this.id = id;
+		this.fecha = fecha;
+		this.asistencia = asistencia;
+		this.observacion = observacion;
+	}
+
+	public Cita() {
+		super();
+	}
+
 	public LocalDate getFecha() {
 		return fecha;
 	}

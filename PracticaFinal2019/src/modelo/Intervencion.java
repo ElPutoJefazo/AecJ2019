@@ -6,6 +6,17 @@ public class Intervencion {
 	private String tipoIntervencion;
 	private boolean resultado;
 
+	public Intervencion() {
+		super();
+	}
+
+	public Intervencion(boolean realizacion, String tipoIntervencion, boolean resultado) {
+		super();
+		this.realizacion = realizacion;
+		this.tipoIntervencion = tipoIntervencion;
+		this.resultado = resultado;
+	}
+
 	public boolean isRealizacion() {
 		return realizacion;
 	}

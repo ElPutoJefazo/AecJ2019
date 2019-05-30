@@ -6,6 +6,18 @@ public class Medico extends Persona {
 
 	private Especialidad especialidad;
 	private LocalDate horario;
+
+	public Medico() {
+		super();
+	}
+
+	public Medico(Especialidad especialidad, LocalDate horario, int id) {
+		super();
+		this.especialidad = especialidad;
+		this.horario = horario;
+		this.id = id;
+	}
+
 	private int id;
 
 	public Especialidad getEspecialidad() {

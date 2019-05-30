@@ -6,6 +6,17 @@ public abstract class Persona {
 	private String direccion;
 	private String numeroTlf;
 
+	public Persona() {
+		super();
+	}
+
+	public Persona(String nombre, String direccion, String numeroTlf) {
+		super();
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.numeroTlf = numeroTlf;
+	}
+
 	public String getDireccion() {
 		return direccion;
 	}

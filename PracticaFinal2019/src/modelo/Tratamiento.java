@@ -8,6 +8,17 @@ public class Tratamiento {
 	private LocalDate fechaInicio;
 	private LocalDate fechaFin;
 
+	public Tratamiento(String dosis, LocalDate fechaInicio, LocalDate fechaFin) {
+		super();
+		this.dosis = dosis;
+		this.fechaInicio = fechaInicio;
+		this.fechaFin = fechaFin;
+	}
+
+	public Tratamiento() {
+		super();
+	}
+
 	public String getDosis() {
 		return dosis;
 	}
