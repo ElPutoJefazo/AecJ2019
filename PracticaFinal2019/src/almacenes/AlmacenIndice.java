@@ -41,6 +41,7 @@ public class AlmacenIndice<T, K> {
 			retorno = (T) dao.leer(pathDatos, posicion);
 		}
 		return retorno;
+		//asefaesaf
 	}
 
 	/**
