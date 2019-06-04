@@ -4,10 +4,10 @@ import java.time.LocalDate;
 
 public class Paciente extends Persona {
 
-	private int id;
+	private String id;
 	private LocalDate fechaNacimiento;
 
-	public Paciente(int id, LocalDate fechaNacimiento) {
+	public Paciente(String id, LocalDate fechaNacimiento) {
 		super();
 		this.id = id;
 		this.fechaNacimiento = fechaNacimiento;
@@ -17,7 +17,7 @@ public class Paciente extends Persona {
 		super();
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 

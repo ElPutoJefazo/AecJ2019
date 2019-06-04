@@ -16,7 +16,7 @@ import acceso.DAO;
  * @param <T>
  */
 public class AlmacenRutaDestino<T> {
-	private DAO daoRuta;
+	private DAO dao;
 	private String pathInicial;
 	private String extension;
 
@@ -31,7 +31,7 @@ public class AlmacenRutaDestino<T> {
 		super();
 		this.pathInicial = pathInicial;
 		this.extension = extension;
-		daoRuta = new DAO<>();
+		dao = new DAO<>();
 		File file = new File(pathInicial);
 		if (!file.exists()) {
 			file.mkdirs();
@@ -51,7 +51,7 @@ public class AlmacenRutaDestino<T> {
 	 * @return
 	 */
 	public boolean grabar(String nombreElemento, T t) {
-		return daoRuta.grabar(pathInicial + "/" + nombreElemento + "." + extension, t);
+		return dao.grabar(pathInicial + "/" + nombreElemento + "." + extension, t);
 	}
 
 	/**
@@ -64,16 +64,13 @@ public class AlmacenRutaDestino<T> {
 	 */
 	public T obtener(String nombreElemento) {
 
-		return (T) daoRuta.leer(pathInicial + "/" + nombreElemento + "." + extension);
+		return (T) dao.leer(pathInicial + "/" + nombreElemento + "." + extension);
 	}
-
-	/**
-	 * Devuelve los nombres de los archivos que estan dentro de la carpeta
-	 * destino sin extension
-	 * 
-	 * @param pathDestino
-	 * @return
-	 */
+	
+	public boolean borrar(String nombreElemento) {
+		return dao.borrar(pathInicial + "/" + nombreElemento + "." + extension);
+	}
+	
 	public String[] getFiles() {
 		String[] elements = null;
 		File carpeta = new File(pathInicial);
