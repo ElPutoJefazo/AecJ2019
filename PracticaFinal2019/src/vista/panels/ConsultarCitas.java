@@ -1,20 +1,28 @@
-package vista;
+package vista.panels;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import vista.subpanels.BuscarPaciente;
+import vista.subpanels.ValidarError;
+
+import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-public class ConsultarCitas extends JFrame {
+public class ConsultarCitas extends JPanel {
 
 	private JPanel contentPane;
+	protected ValidarError validarError = new ValidarError();
+	protected BuscarPaciente buscarPaciente = new BuscarPaciente();
 
 	/**
 	 * Launch the application.
@@ -36,16 +44,19 @@ public class ConsultarCitas extends JFrame {
 	 * Create the frame.
 	 */
 	public ConsultarCitas() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 633, 666);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		
 		JPanel panelBuscarPaciente = new JPanel();
-		
+		panelBuscarPaciente.setLayout(new BorderLayout(0, 0));
+		panelBuscarPaciente.add(buscarPaciente.getPanelBuscarPaciente());
+		buscarPaciente.setLayout(new BoxLayout(buscarPaciente, BoxLayout.Y_AXIS));
 		JPanel panelValidarError = new JPanel();
-		
+		panelValidarError.setLayout(new BorderLayout(0, 0));
+		panelValidarError.add(validarError.getPanelValidarError());
+		validarError.setLayout(new BoxLayout(validarError, BoxLayout.X_AXIS));
+
 		JLabel lblFecha = new JLabel("Fecha");
 		lblFecha.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
@@ -109,5 +120,12 @@ public class ConsultarCitas extends JFrame {
 					.addContainerGap(278, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
+	}
+//	public JLabel getTextDescripcionAltaArticulo() {
+//		return validarError.getLblErrorAlIntentar();
+//	}
+
+	public JPanel getContentPane() {
+		return contentPane;
 	}
 }

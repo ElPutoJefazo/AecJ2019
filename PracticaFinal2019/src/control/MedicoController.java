@@ -5,31 +5,41 @@ import modelo.Hospital;
 public class MedicoController {
 
 	private Hospital hospital;
-
+	ParaUI paraUI;
+	
+	public MedicoController(ParaUI paraUI) {
+		super();
+		this.paraUI = paraUI;
+	}
 	public Hospital getHospital() {
 		return hospital;
 	}
 
-	private boolean darAltaMedico(Hospital hospital) {
+	private boolean darAltaMedico() {
 		// TODO
 		return false;
 	}
 
-	private boolean darBajaMedico(Hospital hospital) {
+	private boolean darBajaMedico() {
 		// TODO
 		return false;
 	}
 
-	private boolean modificarMedico(Hospital hospital) {
+	private boolean modificarMedico() {
 		// TODO
 		return false;
 	}
 
-	private void consultarDatosPaciente(Hospital hospital) {
+	private void consultarDatosPaciente() {
 		// TODO
 	}
 
 	private void recetarTratamiento() {
-		// TODO TODO
+		// TODO
+	}
+	
+	private boolean validarMedico() {
+		// TODO
+		return false;
 	}
 }

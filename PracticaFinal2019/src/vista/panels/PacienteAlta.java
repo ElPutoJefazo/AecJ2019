@@ -1,4 +1,4 @@
-package vista;
+package vista.panels;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -6,17 +6,22 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import vista.subpanels.ValidarError;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.GridLayout;
+
+import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class PacienteAlta extends JFrame {
-
+public class PacienteAlta extends JPanel {
+	protected ValidarError validarError = new ValidarError();
 	private JPanel contentPane;
 	private JTextField txtNombre;
 	private JTextField txtApellidos;
@@ -44,11 +49,9 @@ public class PacienteAlta extends JFrame {
 	 * Create the frame.
 	 */
 	public PacienteAlta() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 772, 423);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		
 		JLabel lblDarDeAlta = new JLabel("Dar de alta a un paciente");
 		lblDarDeAlta.setFont(new Font("Tahoma", Font.PLAIN, 24));
@@ -84,6 +87,12 @@ public class PacienteAlta extends JFrame {
 		txtTelefono.setColumns(10);
 		
 		JPanel panelErrorValidar = new JPanel();
+
+		panelErrorValidar.setLayout(new BorderLayout(0, 0));
+		panelErrorValidar.add(validarError.getPanelValidarError());
+		validarError.setLayout(new BoxLayout(validarError, BoxLayout.X_AXIS));
+		
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -147,5 +156,33 @@ public class PacienteAlta extends JFrame {
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	public JPanel getContentPane() {
+		return contentPane;
+	}
+
+	public ValidarError getValidarError() {
+		return validarError;
+	}
+
+	public JTextField getTxtNombre() {
+		return txtNombre;
+	}
+
+	public JTextField getTxtApellidos() {
+		return txtApellidos;
+	}
+
+	public JTextField getTxtFecha() {
+		return txtFecha;
+	}
+
+	public JTextField getTxtDireccion() {
+		return txtDireccion;
+	}
+
+	public JTextField getTxtTelefono() {
+		return txtTelefono;
 	}
 }

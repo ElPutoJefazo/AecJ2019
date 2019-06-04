@@ -1,4 +1,4 @@
-package vista;
+package vista.panels;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -6,14 +6,22 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import vista.subpanels.BuscarPaciente;
+import vista.subpanels.ValidarError;
+
+import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-public class PacienteBaja extends JFrame {
+public class PacienteBaja extends JPanel {
 
 	private JPanel contentPane;
+	protected ValidarError validarError = new ValidarError();
+	protected BuscarPaciente buscarPaciente = new BuscarPaciente();
+
 
 	/**
 	 * Launch the application.
@@ -35,15 +43,18 @@ public class PacienteBaja extends JFrame {
 	 * Create the frame.
 	 */
 	public PacienteBaja() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 602, 404);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		
 		JPanel panelBuscarPaciente = new JPanel();
-		
+		panelBuscarPaciente.setLayout(new BorderLayout(0, 0));
+		panelBuscarPaciente.add(buscarPaciente.getPanelBuscarPaciente());
+		buscarPaciente.setLayout(new BoxLayout(buscarPaciente, BoxLayout.Y_AXIS));
 		JPanel panelValidarError = new JPanel();
+		panelValidarError.setLayout(new BorderLayout(0, 0));
+		panelValidarError.add(validarError.getPanelValidarError());
+		validarError.setLayout(new BoxLayout(validarError, BoxLayout.X_AXIS));
 		
 		JButton btnEliminarPaciente = new JButton("Eliminar paciente");
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -72,6 +83,10 @@ public class PacienteBaja extends JFrame {
 					.addGap(50))
 		);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	public JPanel getContentPane() {
+		return contentPane;
 	}
 
 }

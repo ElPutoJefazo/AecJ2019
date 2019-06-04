@@ -2,13 +2,15 @@ package modelo;
 
 import java.util.ArrayList;
 
+import Fachada.Datos;
+
 public class Hospital {
 
 	private ArrayList<Medico> medicos;
 	private ArrayList<Paciente> pacientes;
-	private Fachada fachada;
+	private Datos fachada;
 
-	public Hospital(ArrayList<Medico> medicos, ArrayList<Paciente> pacientes, Fachada fachada) {
+	public Hospital(ArrayList<Medico> medicos, ArrayList<Paciente> pacientes, Datos fachada) {
 		super();
 		this.medicos = medicos;
 		this.pacientes = pacientes;
@@ -35,11 +37,11 @@ public class Hospital {
 		this.pacientes = pacientes;
 	}
 
-	public Fachada getFachada() {
+	public Datos getFachada() {
 		return fachada;
 	}
 
-	public void setFachada(Fachada fachada) {
+	public void setFachada(Datos fachada) {
 		this.fachada = fachada;
 	}
 

@@ -1,10 +1,15 @@
-package vista;
+package vista.panels;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import vista.subpanels.BuscarPaciente;
+
+import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
@@ -13,7 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 
-public class ModificarMedico extends JFrame {
+public class ModificarPaciente extends JPanel {
 
 	private JPanel contentPane;
 	private JTextField txtNombre;
@@ -25,6 +30,9 @@ public class ModificarMedico extends JFrame {
 	private JTextField txtMensaje;
 	private JPanel panelBuscarMedico;
 	private JButton btnModificar;
+	protected BuscarPaciente buscarPaciente = new BuscarPaciente();
+	
+
 
 	/**
 	 * Launch the application.
@@ -45,12 +53,10 @@ public class ModificarMedico extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ModificarMedico() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public ModificarPaciente() {
 		setBounds(100, 100, 749, 517);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -93,6 +99,9 @@ public class ModificarMedico extends JFrame {
 		txtMensaje.setColumns(10);
 		
 		panelBuscarMedico = new JPanel();
+		panelBuscarMedico.setLayout(new BorderLayout(0, 0));
+		panelBuscarMedico.add(buscarPaciente.getPanelBuscarPaciente());
+		buscarPaciente.setLayout(new BoxLayout(buscarPaciente, BoxLayout.Y_AXIS));
 		
 		btnModificar = new JButton("Modificar");
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -161,5 +170,9 @@ public class ModificarMedico extends JFrame {
 					.addGap(29))
 		);
 		contentPane.setLayout(gl_contentPane);
+	}
+
+	public JPanel getContentPane() {
+		return contentPane;
 	}
 }
