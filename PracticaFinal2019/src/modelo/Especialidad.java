@@ -1,5 +1,6 @@
 package modelo;
 
 public enum Especialidad {
-	atencionPrimaria, cirujano
+	atencionPrimaria, cirujano, podologo, urologo, otorrinolaringologo;
+
 }

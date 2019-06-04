@@ -1,5 +1,9 @@
 package modelo;
 
+import java.util.regex.Pattern;
+
+import utiles.Respuesta;
+
 public abstract class Persona {
 
 	private String nombre;
@@ -12,8 +16,10 @@ public abstract class Persona {
 
 	public Persona(String nombre, String direccion, String numeroTlf) {
 		super();
+		assert nombre != null && validaNombre(nombre).resultado;
 		this.nombre = nombre;
 		this.direccion = direccion;
+		assert numeroTlf != null && validaTlf(numeroTlf).resultado;
 		this.numeroTlf = numeroTlf;
 	}
 
@@ -35,6 +41,14 @@ public abstract class Persona {
 
 	public String getNombre() {
 		return nombre;
+	}
+
+	public static Respuesta validaNombre(String nombre) {
+		return new Respuesta(Pattern.matches("[:alpha:]\\s", nombre), "Nombre no válido");
+	}
+
+	public static Respuesta validaTlf(String numeroTlf) {
+		return new Respuesta(Pattern.matches("[679]\\d{8}", numeroTlf), "Teléfono no válido");
 	}
 
 }

@@ -3,14 +3,14 @@ package modelo;
 public class Intervencion {
 
 	private boolean realizacion;
-	private String tipoIntervencion;
+	private TipoIntervencion tipoIntervencion;
 	private boolean resultado;
 
 	public Intervencion() {
 		super();
 	}
 
-	public Intervencion(boolean realizacion, String tipoIntervencion, boolean resultado) {
+	public Intervencion(boolean realizacion, TipoIntervencion tipoIntervencion, boolean resultado) {
 		super();
 		this.realizacion = realizacion;
 		this.tipoIntervencion = tipoIntervencion;
@@ -25,11 +25,11 @@ public class Intervencion {
 		this.realizacion = realizacion;
 	}
 
-	public String getTipoIntervencion() {
+	public TipoIntervencion getTipoIntervencion() {
 		return tipoIntervencion;
 	}
 
-	public void setTipoIntervencion(String tipoIntervencion) {
+	public void setTipoIntervencion(TipoIntervencion tipoIntervencion) {
 		this.tipoIntervencion = tipoIntervencion;
 	}
 

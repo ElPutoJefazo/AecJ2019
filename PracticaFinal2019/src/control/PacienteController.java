@@ -10,27 +10,27 @@ public class PacienteController {
 		return hospital;
 	}
 
-	private boolean darAltaPaciente() {
+	private boolean darAltaPaciente(Hospital hospital) {
 		// TODO
 		return false;
 	}
 
-	private boolean darBajaPAciente() {
+	private boolean darBajaPAciente(Hospital hospital) {
 		// TODO
 		return false;
 	}
 
-	private boolean modificarPaciente() {
+	private boolean modificarPaciente(Hospital hospital) {
 		// TODO
 		return false;
 	}
 
 	private boolean solicitarCita() {
-		// TODO
+		// TODO TODO
 		return false;
 	}
 
 	private void accederCitasPendientes() {
-		// TODO
+		// TODO TODO
 	}
 }

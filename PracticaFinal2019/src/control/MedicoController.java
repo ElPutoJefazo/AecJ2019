@@ -10,26 +10,26 @@ public class MedicoController {
 		return hospital;
 	}
 
-	private boolean darAltaMedico() {
+	private boolean darAltaMedico(Hospital hospital) {
 		// TODO
 		return false;
 	}
 
-	private boolean darBajaMedico() {
+	private boolean darBajaMedico(Hospital hospital) {
 		// TODO
 		return false;
 	}
 
-	private boolean modificarMedico() {
+	private boolean modificarMedico(Hospital hospital) {
 		// TODO
 		return false;
 	}
 
-	private void consultarDatosPaciente() {
+	private void consultarDatosPaciente(Hospital hospital) {
 		// TODO
 	}
 
 	private void recetarTratamiento() {
-		// TODO
+		// TODO TODO
 	}
 }
