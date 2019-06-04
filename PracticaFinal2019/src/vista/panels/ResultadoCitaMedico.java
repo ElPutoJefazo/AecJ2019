@@ -1,4 +1,4 @@
-package vista;
+package vista.panels;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 
-public class ResultadoCitaMedico extends JFrame {
+public class ResultadoCitaMedico extends JPanel {
 
 	private JPanel contentPane;
 	private JTextField textObservaciones;
@@ -43,11 +43,9 @@ public class ResultadoCitaMedico extends JFrame {
 	 * Create the frame.
 	 */
 	public ResultadoCitaMedico() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 863, 585);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		
 		JLabel lblDiagnosticoFinal = new JLabel("Diagnostico final");
 		lblDiagnosticoFinal.setFont(new Font("Tahoma", Font.BOLD, 25));
@@ -86,7 +84,7 @@ public class ResultadoCitaMedico extends JFrame {
 		txtDuracion.setColumns(10);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(textObservaciones, GroupLayout.PREFERRED_SIZE, 334, GroupLayout.PREFERRED_SIZE)
@@ -101,7 +99,7 @@ public class ResultadoCitaMedico extends JFrame {
 							.addGroup(gl_contentPane.createSequentialGroup()
 								.addComponent(lblDosis)
 								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(txtDosis))))
+								.addComponent(txtDosis, 256, 256, 256))))
 					.addGap(94))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(86)
@@ -117,7 +115,7 @@ public class ResultadoCitaMedico extends JFrame {
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(btnAplicarResultado, GroupLayout.PREFERRED_SIZE, 94, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(137, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(334, Short.MAX_VALUE)
 					.addComponent(lblDiagnosticoFinal)
 					.addGap(291))
@@ -131,10 +129,9 @@ public class ResultadoCitaMedico extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel)
 						.addComponent(lblNewLabel_2))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(textObservaciones, GroupLayout.PREFERRED_SIZE, 270, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addGroup(gl_contentPane.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(textField, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
@@ -143,8 +140,12 @@ public class ResultadoCitaMedico extends JFrame {
 							.addGap(30)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 								.addComponent(lblDuracion)
-								.addComponent(txtDuracion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
-					.addPreferredGap(ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+								.addComponent(txtDuracion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED, 26, Short.MAX_VALUE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(textObservaciones, GroupLayout.PREFERRED_SIZE, 270, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)))
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel_1)
 						.addComponent(txtError, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)

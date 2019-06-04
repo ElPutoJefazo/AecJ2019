@@ -1,4 +1,4 @@
-package vista;
+package vista.panels;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -6,6 +6,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import vista.subpanels.BuscarMedico;
+import vista.subpanels.BuscarPaciente;
+import vista.subpanels.PanelHorarioMedico;
+import vista.subpanels.ValidarError;
+
+import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
@@ -14,9 +21,14 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JComboBox;
 
-public class PedirCitaPrimaria extends JFrame {
+public class PedirCitaPrimaria extends JPanel {
 
 	private JPanel contentPane;
+	protected ValidarError validarError = new ValidarError();
+	protected BuscarPaciente buscarPaciente = new BuscarPaciente();
+	protected BuscarMedico buscarMedico = new BuscarMedico();
+	protected PanelHorarioMedico panelHorarioMedico = new PanelHorarioMedico();
+
 
 	/**
 	 * Launch the application.
@@ -38,22 +50,28 @@ public class PedirCitaPrimaria extends JFrame {
 	 * Create the frame.
 	 */
 	public PedirCitaPrimaria() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 596, 663);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		
 		JPanel panelBuscarPaciente = new JPanel();
-		
+		panelBuscarPaciente.setLayout(new BorderLayout(0, 0));
+		panelBuscarPaciente.add(buscarPaciente.getPanelBuscarPaciente());
+		buscarPaciente.setLayout(new BoxLayout(buscarPaciente, BoxLayout.Y_AXIS));
 		JPanel panelBuscarMedico = new JPanel();
-		
+		panelBuscarMedico.setLayout(new BorderLayout(0, 0));
+		panelBuscarMedico.add(buscarMedico.getPanelBuscarMedico());
+		buscarMedico.setLayout(new BoxLayout(buscarPaciente, BoxLayout.Y_AXIS));
 		JPanel panelErrorValidar = new JPanel();
-		
+		panelErrorValidar.setLayout(new BorderLayout(0, 0));
+		panelErrorValidar.add(validarError.getPanelValidarError());
+		validarError.setLayout(new BoxLayout(buscarPaciente, BoxLayout.Y_AXIS));
 		JButton btnDarCita = new JButton("Dar cita");
 		
 		JPanel panelHorarioDelMedico = new JPanel();
-		
+		panelHorarioDelMedico.setLayout(new BorderLayout(0, 0));
+		panelHorarioDelMedico.add(panelHorarioMedico.getPanelHorarioMedico());
+		panelHorarioMedico.setLayout(new BoxLayout(buscarPaciente, BoxLayout.Y_AXIS));
 		JLabel lblEspecialidad = new JLabel("Especialidad");
 		lblEspecialidad.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		

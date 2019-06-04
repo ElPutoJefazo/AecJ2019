@@ -1,12 +1,11 @@
-package vista.panels;
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+package vista.subpanels;
 
-import javax.swing.JFrame;
+import java.awt.EventQueue;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import Botonera;
+import vista.subpanels.Botonera;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
@@ -15,7 +14,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class Horario extends JFrame {
+public class Horario extends JPanel {
 
 	private JPanel contentPane;
 	protected Botonera botonera;
@@ -41,11 +40,9 @@ public class Horario extends JFrame {
 	 * Create the frame.
 	 */
 	public Horario() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 697, 494);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		botonera = new Botonera(100, 0);
 		botonera.setBounds(100, 5, 150, 150);
 		contentPane.add(botonera);
