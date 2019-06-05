@@ -10,9 +10,7 @@ public abstract class Persona {
 	private String direccion;
 	private String numeroTlf;
 
-	public Persona() {
-		super();
-	}
+	
 
 	public Persona(String nombre, String direccion, String numeroTlf) {
 		super();

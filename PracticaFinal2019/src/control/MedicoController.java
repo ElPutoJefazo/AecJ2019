@@ -1,6 +1,7 @@
 package control;
 
 import modelo.Hospital;
+import modelo.Medico;
 
 public class MedicoController {
 
@@ -13,30 +14,27 @@ public class MedicoController {
 		this.hospital = hospital;
 	}
 
-	private boolean darAltaMedico() {
+	public boolean darAltaMedico(Medico medico) {
 		// TODO
 		return false;
 	}
 
-	private boolean darBajaMedico() {
+	public boolean darBajaMedico(Medico medico) {
 		// TODO
 		return false;
 	}
 
-	private boolean modificarMedico() {
-		// TODO
-		return false;
-	}
 
-	private void consultarDatosPaciente() {
+
+	private void consultarDatosPaciente(Medico medico) {
 		// TODO
 	}
 
-	private void recetarTratamiento() {
+	private void recetarTratamiento(Medico medico) {
 		// TODO
 	}
 	
-	private boolean validarMedico() {
+	private boolean validarMedico(Medico medico) {
 		// TODO
 		return false;
 	}

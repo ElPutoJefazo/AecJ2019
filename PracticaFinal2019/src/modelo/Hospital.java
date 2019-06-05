@@ -6,8 +6,8 @@ import Fachada.Datos;
 
 public class Hospital {
 
-	private ArrayList<Medico> medicos;
-	private ArrayList<Paciente> pacientes;
+	public ArrayList<Medico> medicos;
+	public ArrayList<Paciente> pacientes;
 	private Datos datos;
 
 	public Hospital(ArrayList<Medico> medicos, ArrayList<Paciente> pacientes, Datos fachada) {

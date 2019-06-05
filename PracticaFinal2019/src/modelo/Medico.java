@@ -6,19 +6,19 @@ public class Medico extends Persona {
 
 	private Especialidad especialidad;
 	private LocalDate horario;
+	private String id;
 
-	public Medico() {
-		super();
-	}
 
-	public Medico(Especialidad especialidad, LocalDate horario, int id) {
-		super();
+	
+
+	public Medico(String nombre, String direccion, String numeroTlf, Especialidad especialidad, LocalDate horario,
+			String id) {
+		super(nombre, direccion, numeroTlf);
 		this.especialidad = especialidad;
 		this.horario = horario;
 		this.id = id;
 	}
 
-	private int id;
 
 	public Especialidad getEspecialidad() {
 		return especialidad;

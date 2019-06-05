@@ -1,6 +1,7 @@
 package control;
 
 import modelo.Hospital;
+import modelo.Paciente;
 
 public class PacienteController {
 
@@ -13,36 +14,36 @@ public class PacienteController {
 		this.hospital = hospital;
 	}
 
-	private boolean darAltaPaciente() {
+	public boolean darAltaPaciente(Paciente paciente) {
 		// TODO
 		return false;
 	}
 
-	private boolean darBajaPAciente() {
+	public boolean darBajaPaciente(Paciente paciente) {
 		// TODO
 		return false;
 	}
 
-	private boolean modificarPaciente() {
+	public boolean modificarPaciente(Paciente paciente) {
 		// TODO
 		return false;
 	}
 
-	private boolean solicitarCita() {
+	private boolean solicitarCita(Paciente paciente) {
 		// TODO
 		return false;
 	}
 
-	private void accederCitasPendientes() {
+	private void accederCitasPendientes(Paciente paciente) {
 		// TODO
 	}
 	
-	private boolean validarPaciente() {
+	private boolean validarPaciente(Paciente paciente) {
 		// TODO
 		return false;
 	}
 
-	private boolean validarCita() {
+	private boolean validarCita(Paciente paciente) {
 		// TODO
 		return false;
 	}
