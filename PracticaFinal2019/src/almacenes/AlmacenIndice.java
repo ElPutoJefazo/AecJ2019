@@ -44,35 +44,21 @@ public class AlmacenIndice<T, K> {
 		
 	}
 
-	/**
-	 * Almacen el elemnto de clase T con Clave K, hay que pasarla
-	 * 
-	 * @param t
-	 *            el objeto a grabar
-	 * @param k
-	 *            la propiedad clave o indice del objeto t
-	 * @return true si ha almacenado y false en caso contrario
-	 */
 	public boolean grabar(T t, K k) {
 		boolean retorno = false;
 		Integer value = indice.size();
 		generarCarpetasSiNo();
 		if (indice.put(k, value) == null) {
-			// si se almacena bien en el archivo de datos
 			if (dao.grabar(pathDatos, t, true)) {
 				retorno = true;
 				dao.grabar(pathIndice, indice);
 			} else {
-				//Si no se graba bien actualizamos el indice con la version grabada
 				leerIndice();
 			}
 		}
 		return retorno;
 	}
 
-	/**
-	 * 
-	 */
 	private void generarCarpetasSiNo() {
 		if(!new File(pathDatos).exists()) {
 			new File(pathDatos.substring(0,pathDatos.lastIndexOf('/'))).mkdirs();
@@ -111,10 +97,6 @@ public class AlmacenIndice<T, K> {
 		}
 	}
 
-	/**
-	 * @param i
-	 * @return
-	 */
 	private String getClave(int i) {
 		return ((IAlmacen)dao.leer(pathDatos, i)).getClave();
 	}

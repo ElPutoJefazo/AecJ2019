@@ -4,15 +4,13 @@ import modelo.Hospital;
 
 public class MedicoController {
 
-	private Hospital hospital;
+	Hospital hospital;
 	ParaUI paraUI;
 	
-	public MedicoController(ParaUI paraUI) {
+	public MedicoController(ParaUI paraUI, Hospital hospital) {
 		super();
 		this.paraUI = paraUI;
-	}
-	public Hospital getHospital() {
-		return hospital;
+		this.hospital = hospital;
 	}
 
 	private boolean darAltaMedico() {

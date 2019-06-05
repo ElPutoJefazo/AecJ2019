@@ -17,11 +17,7 @@ public class Cita {
 		this.observacion = observacion;
 	}
 
-	public Cita() {
-		super();
-	}
-
-	public LocalDate getFecha() {
+public LocalDate getFecha() {
 		return fecha;
 	}
 

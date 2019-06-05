@@ -17,10 +17,6 @@ public class Hospital {
 		this.fachada = fachada;
 	}
 
-	public Hospital() {
-		super();
-	}
-
 	public ArrayList<Medico> getMedicos() {
 		return medicos;
 	}
