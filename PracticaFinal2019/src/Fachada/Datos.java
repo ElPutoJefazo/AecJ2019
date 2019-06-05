@@ -9,16 +9,16 @@ import almacenes.AlmacenRutaDestino;
 public class Datos {
 
 	private AlmacenRutaDestino<Paciente>AlmacenPaciente= new AlmacenRutaDestino<>(RUTAPACIENTES, "pacientes.pac");
-	public static final String RUTAPACIENTES = "./data/clientes/clientes.data";
+	public static final String RUTAPACIENTES = "\\AecJ2019\\PracticaFinal2019\\Datos\\Pacientes";
 	
 
 	public boolean grabarPaciente(Paciente paciente) {
 		return AlmacenPaciente.grabar(paciente.getId(),paciente);
 	}
 
-	private boolean borrar(String nombreElemento) {
-		return AlmacenPaciente.borrar(nombreElemento);
-	}
+//	private boolean borrar(String nombreElemento) {
+//		return AlmacenPaciente.borrar(nombreElemento);
+//	}
 
 	public Paciente obtenerPaciente(String id) {
 		return AlmacenPaciente.obtener(id);
