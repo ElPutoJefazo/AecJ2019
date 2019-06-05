@@ -8,13 +8,13 @@ public class Hospital {
 
 	private ArrayList<Medico> medicos;
 	private ArrayList<Paciente> pacientes;
-	private Datos fachada;
+	private Datos datos;
 
 	public Hospital(ArrayList<Medico> medicos, ArrayList<Paciente> pacientes, Datos fachada) {
 		super();
 		this.medicos = medicos;
 		this.pacientes = pacientes;
-		this.fachada = fachada;
+		this.datos = fachada;
 	}
 
 	public ArrayList<Medico> getMedicos() {
@@ -34,11 +34,11 @@ public class Hospital {
 	}
 
 	public Datos getFachada() {
-		return fachada;
+		return datos;
 	}
 
-	public void setFachada(Datos fachada) {
-		this.fachada = fachada;
+	public void setDatos(Datos datos) {
+		this.datos = datos;
 	}
 
 }
