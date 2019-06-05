@@ -17,7 +17,6 @@ public class Datos {
 	}
 
 	private boolean borrar(String nombreElemento) {
-
 		return AlmacenPaciente.borrar(nombreElemento);
 	}
 

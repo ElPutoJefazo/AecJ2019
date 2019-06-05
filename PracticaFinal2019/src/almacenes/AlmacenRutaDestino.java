@@ -5,28 +5,13 @@ import java.util.ArrayList;
 
 import acceso.DAO;
 
-/**
- * Se utiliza cuando queremos almacenar en una misma carpeta cada objeto en un
- * archivo diferente cuyo nombre es obtenido por el numero mayor de entre los
- * existentes en dicha carpeta Ejemplo La ruta inicial puede escribirse
- * relativamente o absolutamente ./clientes
- * 
- * @author estar
- *
- * @param <T>
- */
+
 public class AlmacenRutaDestino<T> {
 	private DAO dao;
 	private String pathInicial;
 	private String extension;
 
-	/**
-	 * Se crea la carpeta donde se almacenan los archivos y la extension con la
-	 * que se guardaran
-	 * 
-	 * @param pathInicial
-	 * @param extension
-	 */
+
 	public AlmacenRutaDestino(String pathInicial, String extension) {
 		super();
 		this.pathInicial = pathInicial;
@@ -38,38 +23,20 @@ public class AlmacenRutaDestino<T> {
 		}
 	}
 
-	/**
-	 * Introduce el nombre de la carpeta destino donde se encuentran los
-	 * archivos a tratar introduce el nombre del elemento sin usar la extension
-	 * 
-	 * @param pathDestino
-	 *            una carpeta dentro de la carpeta que se define en el inicio
-	 * @param nombreElemento
-	 *            que puede ser dado por el id del objeto
-	 * @param t
-	 *            el elemento a grabar
-	 * @return
-	 */
+
 	public boolean grabar(String nombreElemento, T t) {
 		return dao.grabar(pathInicial + "/" + nombreElemento + "." + extension, t);
 	}
 
-	/**
-	 * Introduce el nombre de la carpeta destino donde se encuentran los
-	 * archivos a tratar introduce el nombre del elemento sin usar la extension
-	 * 
-	 * @param pathDestino
-	 * @param nombreElemento
-	 * @return
-	 */
+
 	public T obtener(String nombreElemento) {
 
 		return (T) dao.leer(pathInicial + "/" + nombreElemento + "." + extension);
 	}
 	
-	public boolean borrar(String nombreElemento) {
-		return dao.borrar(pathInicial + "/" + nombreElemento + "." + extension);
-	}
+//	public boolean borrar(String nombreElemento) {
+//		return dao.borrar(pathInicial + "/" + nombreElemento + "." + extension);
+//	}
 	
 	public String[] getFiles() {
 		String[] elements = null;

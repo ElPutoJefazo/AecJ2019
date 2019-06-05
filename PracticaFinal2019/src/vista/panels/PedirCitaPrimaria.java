@@ -1,6 +1,7 @@
 package vista.panels;
 
 import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -9,7 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import vista.subpanels.BuscarMedico;
 import vista.subpanels.BuscarPaciente;
-import vista.subpanels.PanelHorarioMedico;
+import vista.subpanels.Horario;
 import vista.subpanels.ValidarError;
 
 import javax.swing.BoxLayout;
@@ -27,12 +28,10 @@ public class PedirCitaPrimaria extends JPanel {
 	protected ValidarError validarError = new ValidarError();
 	protected BuscarPaciente buscarPaciente = new BuscarPaciente();
 	protected BuscarMedico buscarMedico = new BuscarMedico();
-	protected PanelHorarioMedico panelHorarioMedico = new PanelHorarioMedico();
+	protected Horario panelHorarioMedico = new Horario();
 
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -46,9 +45,7 @@ public class PedirCitaPrimaria extends JPanel {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public PedirCitaPrimaria() {
 		setBounds(100, 100, 596, 663);
 		contentPane = new JPanel();
@@ -145,4 +142,9 @@ public class PedirCitaPrimaria extends JPanel {
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
+
+	public JPanel getContentPane() {
+		return contentPane;
+	}
+
 }

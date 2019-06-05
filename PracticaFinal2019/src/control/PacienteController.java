@@ -7,13 +7,10 @@ public class PacienteController {
 	private Hospital hospital;
 	ParaUI paraUI;
 	
-	public PacienteController(ParaUI paraUI) {
+	public PacienteController(ParaUI paraUI, Hospital hospital) {
 		super();
 		this.paraUI = paraUI;
-	}
-
-	public Hospital getHospital() {
-		return hospital;
+		this.hospital = hospital;
 	}
 
 	private boolean darAltaPaciente() {

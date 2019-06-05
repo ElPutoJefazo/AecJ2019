@@ -16,9 +16,9 @@ public class Botonera extends JPanel {
 	
 	public Botonera(int x,int y) {
 		this.setBounds(x, y, 595, 359);
-		iniciarBotonera();
+		botones = iniciarBotonera();
 	}
-	private void iniciarBotonera(){
+	private JButton[][] iniciarBotonera(){
 		this.botones = new JButton[5][4];
 		int x=0,y=0;
 		for (int i = 0; i < this.botones.length; i++) {
@@ -32,6 +32,10 @@ public class Botonera extends JPanel {
 			x=0;
 			y+=this.ladoBoton;
 		}
+		return botones;
+	}
+	public JPanel getContentPane() {
+		return contentPane;
 	}
 
 }

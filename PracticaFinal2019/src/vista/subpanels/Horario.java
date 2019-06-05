@@ -17,12 +17,9 @@ import javax.swing.JButton;
 public class Horario extends JPanel {
 
 	private JPanel contentPane;
-	protected Botonera botonera;
+	protected Botonera botonera = new Botonera(100, 0);;
 	private JTextField txtMensaje;
 
-	/**
-	 * Launch the application.
-	 */
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -36,14 +33,12 @@ public class Horario extends JPanel {
 			}
 		});
 	}
-	/**
-	 * Create the frame.
-	 */
+
+	
 	public Horario() {
 		setBounds(100, 100, 697, 494);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		botonera = new Botonera(100, 0);
 		botonera.setBounds(100, 5, 150, 150);
 		contentPane.add(botonera);
 		
