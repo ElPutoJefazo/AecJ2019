@@ -38,8 +38,7 @@ public class Horario extends JPanel {
 		setBounds(100, 100, 697, 494);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-//		botonera.setBounds(100, 5, 150, 150);
-//		contentPane.add(botonera);
+
 		
 		JPanel panelBuscarMedico = new JPanel();
 		
