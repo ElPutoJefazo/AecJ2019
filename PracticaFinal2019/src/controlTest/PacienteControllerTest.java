@@ -43,4 +43,21 @@ public class PacienteControllerTest {
 	public void testConsultarDatosPaciente() {
 		// TODO
 	}
+	
+	@Ignore
+	private void testSolicitarCita() {
+		// TODO
+	}
+	@Ignore
+	private void testAccederCitasPendientes() {
+		// TODO
+	}
+/*	@Ignore
+	private void testValidarPaciente() {
+		// TODO
+	}
+	@Ignore
+	private void testValidarCita() {
+		// TODO
+	}*/
 }
