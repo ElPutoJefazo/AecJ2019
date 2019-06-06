@@ -56,12 +56,12 @@ public class AlmacenRutaDestino<T> {
 		return definitivos;
 	}
 
-	public ArrayList<T> getList() {
-		ArrayList<T> lista = new ArrayList<>();
-		String[] files = getFiles();
-		for (String string : files) {
-			lista.add(obtener(string));
-		}
-		return lista;
-	}
+//	public ArrayList<T> getList() {
+//		ArrayList<T> lista = new ArrayList<>();
+//		String[] files = getFiles();
+//		for (String string : files) {
+//			lista.add(obtener(string));
+//		}
+//		return lista;
+//	}
 }
