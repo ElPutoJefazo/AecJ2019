@@ -1,24 +1,14 @@
 package vista.panels;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTabbedPane;
-import javax.swing.JLayeredPane;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JToolBar;
-import javax.swing.RootPaneContainer;
-import javax.swing.JDesktopPane;
-import javax.swing.JToggleButton;
-import javax.swing.JList;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -35,7 +25,20 @@ public class VistaPrincipal extends JFrame {
 	protected PacienteBaja pacienteBaja = new PacienteBaja();
 	protected PedirCitaPrimaria pedirCitaPrimaria = new PedirCitaPrimaria();
 	protected ResultadoCitaMedico resultadoCitaMedico = new ResultadoCitaMedico();
-
+	private JMenuBar menuBar;
+	private JMenu mnPaciente;
+	private JMenuItem mntmAltapaciente;
+	private JMenuItem mntmBajaPaciente;
+	private JMenuItem mntmModificarPaciente;
+	private JMenuItem mntmSolicitarCitas;
+	private JMenuItem mntmAccesoCitasPendientes;
+	private JMenu mnMedico;
+	private JMenuItem mntmAltaMedico;
+	private JMenuItem mntmBajaMedico;
+	private JMenuItem mntmConsultarDatosPacientes;
+	private JMenuItem mntmConsultarCitasPacientes;
+	private JMenuItem mntmRecetarTratamiento;
+	private JMenu mnOperaciones;
 
 	/**
 	 * Launch the application.
@@ -68,15 +71,53 @@ public class VistaPrincipal extends JFrame {
 		contentPane.add(lblBienvenidosAlHospital);
 		lblBienvenidosAlHospital.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		
-		JMenuBar menuBar = new JMenuBar();
+		menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 733, 21);
 		setJMenuBar(menuBar);
 		
-		JMenu mnPaciente = new JMenu("Paciente");
+		mnPaciente = new JMenu("Paciente");
 		menuBar.add(mnPaciente);
 		
-		JMenuItem mntmAltapaciente = new JMenuItem("Alta Paciente");
+		mntmAltapaciente = new JMenuItem("Alta Paciente");
 		mnPaciente.add(mntmAltapaciente);
+		
+		mntmBajaPaciente = new JMenuItem("Baja Paciente");
+		mnPaciente.add(mntmBajaPaciente);
+		
+		mntmModificarPaciente = new JMenuItem("Modificar Paciente");
+		mnPaciente.add(mntmModificarPaciente);
+		
+		mntmSolicitarCitas = new JMenuItem("Solicitar Citas");
+		mnPaciente.add(mntmSolicitarCitas);
+		
+		mntmAccesoCitasPendientes = new JMenuItem("Acceso Citas Pendientes");
+		mnPaciente.add(mntmAccesoCitasPendientes);
+
+		
+		mnMedico = new JMenu("Medico");
+		menuBar.add(mnMedico);
+		
+		mntmAltaMedico = new JMenuItem("Alta Medico");
+		mnMedico.add(mntmAltaMedico);
+
+		mntmBajaMedico = new JMenuItem("Baja Medico");
+		mnMedico.add(mntmBajaMedico);
+		
+		mntmConsultarDatosPacientes = new JMenuItem("Consultar Datos Pacientes");
+		mnMedico.add(mntmConsultarDatosPacientes);
+
+		
+		mntmConsultarCitasPacientes = new JMenuItem("Consultar Citas Pacientes");
+		mnMedico.add(mntmConsultarCitasPacientes);
+
+		
+		mntmRecetarTratamiento = new JMenuItem("Recetar Tratamiento");
+		mnMedico.add(mntmRecetarTratamiento);
+
+		
+		mnOperaciones = new JMenu("Operaciones");
+		menuBar.add(mnOperaciones);
+		
 		
 		mntmAltapaciente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -85,9 +126,7 @@ public class VistaPrincipal extends JFrame {
 			getContentPane().repaint();
 			}
 			});
-		
-		JMenuItem mntmBajaPaciente = new JMenuItem("Baja Paciente");
-		mnPaciente.add(mntmBajaPaciente);
+
 		
 		mntmBajaPaciente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -96,9 +135,7 @@ public class VistaPrincipal extends JFrame {
 			getContentPane().repaint();
 			}
 			});
-		
-		JMenuItem mntmModificarPaciente = new JMenuItem("Modificar Paciente");
-		mnPaciente.add(mntmModificarPaciente);
+
 		
 		mntmModificarPaciente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -107,9 +144,7 @@ public class VistaPrincipal extends JFrame {
 			getContentPane().repaint();
 			}
 			});
-		
-		JMenuItem mntmSolicitarCitas = new JMenuItem("Solicitar Citas");
-		mnPaciente.add(mntmSolicitarCitas);
+
 		
 		mntmSolicitarCitas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -118,10 +153,7 @@ public class VistaPrincipal extends JFrame {
 			getContentPane().repaint();
 			}
 			});
-		
-		JMenuItem mntmAccesoCitasPendientes = new JMenuItem("Acceso Citas Pendientes");
-		mnPaciente.add(mntmAccesoCitasPendientes);
-		
+
 		mntmAccesoCitasPendientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			getContentPane().remove(contentPane);
@@ -129,12 +161,7 @@ public class VistaPrincipal extends JFrame {
 			getContentPane().repaint();
 			}
 			});
-		
-		JMenu mnMedico = new JMenu("Medico");
-		menuBar.add(mnMedico);
-		
-		JMenuItem mntmAltaMedico = new JMenuItem("Alta Medico");
-		mnMedico.add(mntmAltaMedico);
+
 		
 		mntmAltaMedico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -143,10 +170,7 @@ public class VistaPrincipal extends JFrame {
 			contentPane.repaint();
 			}
 			});
-		
-		JMenuItem mntmBajaMedico = new JMenuItem("Baja Medico");
-		mnMedico.add(mntmBajaMedico);
-		
+
 		mntmBajaMedico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			getContentPane().remove(contentPane);
@@ -156,9 +180,6 @@ public class VistaPrincipal extends JFrame {
 			});
 
 		
-		JMenuItem mntmConsultarDatosPacientes = new JMenuItem("Consultar Datos Pacientes");
-		mnMedico.add(mntmConsultarDatosPacientes);
-		
 		mntmConsultarDatosPacientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			getContentPane().remove(contentPane);
@@ -166,9 +187,7 @@ public class VistaPrincipal extends JFrame {
 			getContentPane().repaint();
 			}
 			});
-		
-		JMenuItem mntmConsultarCitasPacientes = new JMenuItem("Consultar Citas Pacientes");
-		mnMedico.add(mntmConsultarCitasPacientes);
+
 		
 		mntmConsultarCitasPacientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -178,8 +197,6 @@ public class VistaPrincipal extends JFrame {
 			}
 			});
 		
-		JMenuItem mntmRecetarTratamiento = new JMenuItem("Recetar Tratamiento");
-		mnMedico.add(mntmRecetarTratamiento);
 		
 		mntmRecetarTratamiento.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
@@ -188,9 +205,50 @@ public class VistaPrincipal extends JFrame {
 		getContentPane().repaint();
 		}
 		});
-		
-		JMenu mnOperaciones = new JMenu("Operaciones");
-		menuBar.add(mnOperaciones);
+	}
+
+	public JMenuItem getMntmAltapaciente() {
+		return mntmAltapaciente;
+	}
+
+	public JMenuItem getMntmBajaPaciente() {
+		return mntmBajaPaciente;
+	}
+
+	public JMenuItem getMntmModificarPaciente() {
+		return mntmModificarPaciente;
+	}
+
+	public JMenuItem getMntmSolicitarCitas() {
+		return mntmSolicitarCitas;
+	}
+
+	public JMenuItem getMntmAccesoCitasPendientes() {
+		return mntmAccesoCitasPendientes;
+	}
+
+	public JMenuItem getMntmAltaMedico() {
+		return mntmAltaMedico;
+	}
+
+	public JMenuItem getMntmBajaMedico() {
+		return mntmBajaMedico;
+	}
+
+	public JMenuItem getMntmConsultarDatosPacientes() {
+		return mntmConsultarDatosPacientes;
+	}
+
+	public JMenuItem getMntmConsultarCitasPacientes() {
+		return mntmConsultarCitasPacientes;
+	}
+
+	public JMenuItem getMntmRecetarTratamiento() {
+		return mntmRecetarTratamiento;
+	}
+
+	public JPanel getContentPane() {
+		return contentPane;
 	}
 	
 	
