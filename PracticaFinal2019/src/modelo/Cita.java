@@ -1,44 +1,64 @@
 package modelo;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Cita {
 
 	private int id;
-	private LocalDate fecha;
-	private boolean asistencia;
-	private String observacion;
+	private LocalDateTime fecha;
+	private Medico medico;
+	private Paciente paciente;
+	private boolean pendiente;
+	private Resultado resultado;
 
-	public Cita(int id, LocalDate fecha, boolean asistencia, String observacion) {
+	public Cita(int id, LocalDateTime fecha, Medico medico, Paciente paciente, boolean pendiente, Resultado resultado) {
 		super();
 		this.id = id;
 		this.fecha = fecha;
-		this.asistencia = asistencia;
-		this.observacion = observacion;
+		this.medico = medico;
+		this.paciente = paciente;
+		this.pendiente = pendiente;
+		this.resultado = resultado;
 	}
 
-public LocalDate getFecha() {
+	public LocalDateTime getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(LocalDate fecha) {
+	public void setFecha(LocalDateTime fecha) {
 		this.fecha = fecha;
 	}
 
-	public boolean isAsistencia() {
-		return asistencia;
+	public Medico getMedico() {
+		return medico;
 	}
 
-	public void setAsistencia(boolean asistencia) {
-		this.asistencia = asistencia;
+	public void setMedico(Medico medico) {
+		this.medico = medico;
 	}
 
-	public String getObservacion() {
-		return observacion;
+	public Paciente getPaciente() {
+		return paciente;
 	}
 
-	public void setObservacion(String observacion) {
-		this.observacion = observacion;
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
+
+	public boolean isPendiente() {
+		return pendiente;
+	}
+
+	public void setPendiente(boolean pendiente) {
+		this.pendiente = pendiente;
+	}
+
+	public Resultado getResultado() {
+		return resultado;
+	}
+
+	public void setResultado(Resultado resultado) {
+		this.resultado = resultado;
 	}
 
 	public int getId() {

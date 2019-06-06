@@ -2,6 +2,7 @@ package modelo;
 
 import java.util.regex.Pattern;
 
+import utiles.Constantes;
 import utiles.Respuesta;
 
 public class Medicamento {
@@ -29,6 +30,6 @@ public class Medicamento {
 	}
 
 	private Respuesta validaNombre(String nombre) {
-		return new Respuesta(Pattern.matches("[:alpha]\\s", nombre), "Nombre no válido");
+		return new Respuesta(Pattern.matches(Constantes.validaNombre, nombre), Constantes.mensajeNombre);
 	}
 }

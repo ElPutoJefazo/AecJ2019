@@ -8,9 +8,6 @@ public class Medico extends Persona {
 	private LocalDate horario;
 	private String id;
 
-
-	
-
 	public Medico(String nombre, String direccion, String numeroTlf, Especialidad especialidad, LocalDate horario,
 			String id) {
 		super(nombre, direccion, numeroTlf);
@@ -18,7 +15,6 @@ public class Medico extends Persona {
 		this.horario = horario;
 		this.id = id;
 	}
-
 
 	public Especialidad getEspecialidad() {
 		return especialidad;
