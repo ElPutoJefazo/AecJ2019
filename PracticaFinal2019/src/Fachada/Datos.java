@@ -16,9 +16,9 @@ public class Datos {
 		return AlmacenPaciente.grabar(paciente.getId(),paciente);
 	}
 
-//	private boolean borrar(String nombreElemento) {
-//		return AlmacenPaciente.borrar(nombreElemento);
-//	}
+	private boolean borrar(String nombreElemento) {
+		return AlmacenPaciente.borrar(nombreElemento);
+	}
 
 	public Paciente obtenerPaciente(String id) {
 		return AlmacenPaciente.obtener(id);

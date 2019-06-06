@@ -30,13 +30,12 @@ public class AlmacenRutaDestino<T> {
 
 
 	public T obtener(String nombreElemento) {
-
 		return (T) dao.leer(pathInicial + "/" + nombreElemento + "." + extension);
 	}
 	
-//	public boolean borrar(String nombreElemento) {
-//		return dao.borrar(pathInicial + "/" + nombreElemento + "." + extension);
-//	}
+	public boolean borrar(String nombreElemento) {
+		return dao.borrar(pathInicial + "/" + nombreElemento + "." + extension);
+	}
 	
 	public String[] getFiles() {
 		String[] elements = null;

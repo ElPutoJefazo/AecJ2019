@@ -107,9 +107,9 @@ public class DAO<T> {
 
 	}
 
-	public void borrar(String rutaArchivo) {
+	public boolean borrar(String rutaArchivo) {
 		File file = new File(rutaArchivo);
-		file.delete();
+		return file.delete();
 	}
 	public boolean borrarElemento(String pathDatos, Integer posicion) {
 		int i = 0;
