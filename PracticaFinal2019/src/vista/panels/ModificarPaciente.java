@@ -41,7 +41,7 @@ public class ModificarPaciente extends JPanel {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ModificarMedico frame = new ModificarMedico();
+					ModificarPaciente frame = new ModificarPaciente();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

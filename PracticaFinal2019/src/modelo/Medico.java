@@ -36,7 +36,7 @@ public class Medico extends Persona {
 		this.horario = horario;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 

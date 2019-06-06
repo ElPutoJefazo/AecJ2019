@@ -31,14 +31,15 @@ public class VistaPrincipal extends JFrame {
 	protected ConsultarCitas consultarCitas = new ConsultarCitas();
 	protected PacienteAlta pacienteAlta = new PacienteAlta();
 	protected AtenderCitaMedico atenderCitaMedico = new AtenderCitaMedico();
-	protected ModificarMedico modificarMedico = new ModificarMedico();
 	protected ModificarPaciente modificarPaciente = new ModificarPaciente();
 	protected PacienteBaja pacienteBaja = new PacienteBaja();
 	protected PedirCitaPrimaria pedirCitaPrimaria = new PedirCitaPrimaria();
 	protected ResultadoCitaMedico resultadoCitaMedico = new ResultadoCitaMedico();
 
 
-
+	/**
+	 * Launch the application.
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -153,17 +154,7 @@ public class VistaPrincipal extends JFrame {
 			getContentPane().repaint();
 			}
 			});
-		
-		JMenuItem mntmModificarMedico = new JMenuItem("Modificar Medico");
-		mnMedico.add(mntmModificarMedico);
-		
-		mntmModificarMedico.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			getContentPane().remove(contentPane);
-			setContentPane(modificarMedico.getContentPane());
-			getContentPane().repaint();
-			}
-			});
+
 		
 		JMenuItem mntmConsultarDatosPacientes = new JMenuItem("Consultar Datos Pacientes");
 		mnMedico.add(mntmConsultarDatosPacientes);

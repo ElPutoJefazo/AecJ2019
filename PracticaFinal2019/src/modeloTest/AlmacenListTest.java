@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import org.junit.Test;
@@ -13,12 +14,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
 import almacenes.AlmacenList;
+import modelo.Especialidad;
 import modelo.Medico;
 
 public class AlmacenListTest {
 	private AlmacenList almacenList;
 	private Medico medico;
-	Medico medico1= new Medico();
+	Medico medico1= new Medico("Joaquin", "direccion", "666666666", Especialidad.cirujano, LocalDate.now(), "1");
 	String path= "./medicos.txt";
 	private File file;
 	IAdaptador<Medico> adaptador;
