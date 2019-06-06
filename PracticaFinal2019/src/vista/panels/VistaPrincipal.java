@@ -38,9 +38,7 @@ public class VistaPrincipal extends JFrame {
 	protected ResultadoCitaMedico resultadoCitaMedico = new ResultadoCitaMedico();
 
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -54,9 +52,6 @@ public class VistaPrincipal extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public VistaPrincipal() {
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

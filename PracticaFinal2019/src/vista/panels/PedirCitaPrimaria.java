@@ -67,7 +67,7 @@ public class PedirCitaPrimaria extends JPanel {
 		
 		JPanel panelHorarioDelMedico = new JPanel();
 		panelHorarioDelMedico.setLayout(new BorderLayout(0, 0));
-		panelHorarioDelMedico.add(panelHorarioMedico.getPanelHorarioMedico());
+		//panelHorarioDelMedico.add(panelHorarioMedico.getPanelHorarioMedico());
 		panelHorarioMedico.setLayout(new BoxLayout(buscarPaciente, BoxLayout.Y_AXIS));
 		JLabel lblEspecialidad = new JLabel("Especialidad");
 		lblEspecialidad.setFont(new Font("Tahoma", Font.PLAIN, 20));

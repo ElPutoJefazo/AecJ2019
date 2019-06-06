@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import vista.subpanels.Botonera;
+//import vista.subpanels.Botonera;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -17,7 +17,6 @@ import javax.swing.JButton;
 public class Horario extends JPanel {
 
 	private JPanel contentPane;
-	protected Botonera botonera = new Botonera(100, 0);;
 	private JTextField txtMensaje;
 
 	
@@ -39,8 +38,8 @@ public class Horario extends JPanel {
 		setBounds(100, 100, 697, 494);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		botonera.setBounds(100, 5, 150, 150);
-		contentPane.add(botonera);
+//		botonera.setBounds(100, 5, 150, 150);
+//		contentPane.add(botonera);
 		
 		JPanel panelBuscarMedico = new JPanel();
 		
