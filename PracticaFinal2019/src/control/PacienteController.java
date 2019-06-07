@@ -18,6 +18,7 @@ public class PacienteController {
 
 	public boolean darAltaPaciente(Paciente paciente) {
 		return datos.grabarPaciente(paciente);
+		
 	}
 
 	public boolean darBajaPaciente(Paciente paciente) {
