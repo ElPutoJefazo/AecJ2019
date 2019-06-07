@@ -1,5 +1,7 @@
 package control;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import Fachada.Datos;
@@ -24,6 +26,12 @@ public class ParaUI extends VistaPrincipal  {
 		hospital = new Hospital(ListMedicos, ListPacientes, datos);
 		pacienteController = new PacienteController(this, hospital);
 		medicoController = new MedicoController(this, hospital);
+		
+		modificarPaciente.getBtnModificar().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//pacienteController.modificarPaciente(paciente, modificarPaciente.getTxtDireccion().getText(), modificarPaciente.getTxtTelefono().getText());
+			}
+		});
 	
 	}
 

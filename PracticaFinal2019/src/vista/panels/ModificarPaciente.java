@@ -17,6 +17,8 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ModificarPaciente extends JPanel {
 
@@ -49,6 +51,7 @@ public class ModificarPaciente extends JPanel {
 			}
 		});
 	}
+
 
 	/**
 	 * Create the frame.
@@ -104,6 +107,7 @@ public class ModificarPaciente extends JPanel {
 		buscarPaciente.setLayout(new BoxLayout(buscarPaciente, BoxLayout.Y_AXIS));
 		
 		btnModificar = new JButton("Modificar");
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -174,5 +178,25 @@ public class ModificarPaciente extends JPanel {
 
 	public JPanel getContentPane() {
 		return contentPane;
+	}
+	
+	public JButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public JTextField getTxtTelefono() {
+		return txtTelefono;
+	}
+
+	public void setTxtTelefono(JTextField txtTelefono) {
+		this.txtTelefono = txtTelefono;
+	}
+
+	public JTextField getTxtDireccion() {
+		return txtDireccion;
+	}
+
+	public void setTxtDireccion(JTextField txtDireccion) {
+		this.txtDireccion = txtDireccion;
 	}
 }

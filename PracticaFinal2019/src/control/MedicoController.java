@@ -15,16 +15,14 @@ public class MedicoController {
 	}
 
 	public boolean darAltaMedico(Medico medico) {
-		// TODO
+		hospital.getMedicos().add(medico);
 		return false;
 	}
 
 	public boolean darBajaMedico(Medico medico) {
-		// TODO
+		hospital.getMedicos().remove(medico);
 		return false;
 	}
-
-
 
 	private void consultarDatosPaciente(Medico medico) {
 		// TODO
