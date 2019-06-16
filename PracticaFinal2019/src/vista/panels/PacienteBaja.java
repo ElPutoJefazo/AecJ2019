@@ -15,6 +15,8 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
 
 public class PacienteBaja extends JPanel {
 
@@ -55,34 +57,30 @@ public class PacienteBaja extends JPanel {
 		panelValidarError.setLayout(new BorderLayout(0, 0));
 		panelValidarError.add(validarError.getPanelValidarError());
 		validarError.setLayout(new BoxLayout(validarError, BoxLayout.X_AXIS));
+		contentPane.setLayout(new GridLayout(0, 1, 0, 0));
+		contentPane.add(panelBuscarPaciente);
+		contentPane.add(panelValidarError);
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel);
 		
 		JButton btnEliminarPaciente = new JButton("Eliminar paciente");
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(panelBuscarPaciente, GroupLayout.PREFERRED_SIZE, 553, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panelValidarError, GroupLayout.PREFERRED_SIZE, 552, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-					.addContainerGap(465, Short.MAX_VALUE)
+		GroupLayout gl_panel = new GroupLayout(panel);
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(28)
 					.addComponent(btnEliminarPaciente)
-					.addContainerGap())
+					.addContainerGap(620, Short.MAX_VALUE))
 		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(panelBuscarPaciente, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(panelValidarError, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(47)
 					.addComponent(btnEliminarPaciente)
-					.addGap(50))
+					.addContainerGap(67, Short.MAX_VALUE))
 		);
-		contentPane.setLayout(gl_contentPane);
+		panel.setLayout(gl_panel);
 	}
 
 	public JPanel getContentPane() {

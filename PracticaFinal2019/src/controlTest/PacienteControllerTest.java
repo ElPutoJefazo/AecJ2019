@@ -39,10 +39,6 @@ public class PacienteControllerTest {
 		assertFalse(test==testDos);
 	}
 	
-	@Ignore
-	public void testConsultarDatosPaciente() {
-		// TODO
-	}
 	
 	@Ignore
 	private void testSolicitarCita() {

@@ -16,6 +16,17 @@ public class Hospital {
 		this.pacientes = pacientes;
 		this.datos = fachada;
 	}
+	
+	public Paciente getPaciente(String id) {
+		//Busca el paciente en el arraylist con el id que pasas
+		
+		return null;
+	}
+	
+	public Medico getMedico(String id) {
+		//Busca el medico en el arraylist con el id que pasas
+		return null;
+	}
 
 	public ArrayList<Medico> getMedicos() {
 		return medicos;

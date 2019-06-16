@@ -53,109 +53,150 @@ public class PacienteAlta extends JPanel {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
-		JLabel lblDarDeAlta = new JLabel("Dar de alta a un paciente");
-		lblDarDeAlta.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		
-		txtNombre = new JTextField();
-		txtNombre.setColumns(10);
-		
-		JLabel lblApellidos = new JLabel("Apellidos");
-		lblApellidos.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		
-		txtApellidos = new JTextField();
-		txtApellidos.setColumns(10);
-		
-		JLabel lblFecha = new JLabel("Fecha");
-		lblFecha.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		
-		txtFecha = new JTextField();
-		txtFecha.setColumns(10);
-		
-		JLabel lblDireccion = new JLabel("Direccion");
-		lblDireccion.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		
-		txtDireccion = new JTextField();
-		txtDireccion.setColumns(10);
-		
-		JLabel lblTelefono = new JLabel("Telefono");
-		lblTelefono.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		
-		txtTelefono = new JTextField();
-		txtTelefono.setColumns(10);
 		
 		JPanel panelErrorValidar = new JPanel();
 
 		panelErrorValidar.setLayout(new BorderLayout(0, 0));
 		panelErrorValidar.add(validarError.getPanelValidarError());
 		validarError.setLayout(new BoxLayout(validarError, BoxLayout.X_AXIS));
+		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
 		
+		JLabel lblDarDeAlta = new JLabel("Dar de alta a un paciente");
+		lblDarDeAlta.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		contentPane.add(lblDarDeAlta);
 		
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
+		JLabel label = new JLabel("");
+		contentPane.add(label);
+		contentPane.add(lblNombre);
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel);
+		
+		txtNombre = new JTextField();
+		txtNombre.setColumns(10);
+		GroupLayout gl_panel = new GroupLayout(panel);
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNombre, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblFecha, GroupLayout.PREFERRED_SIZE, 111, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblDireccion)
-						.addComponent(lblTelefono, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblApellidos, GroupLayout.PREFERRED_SIZE, 136, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtApellidos, GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-						.addComponent(txtFecha, GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-						.addComponent(txtDireccion, GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-						.addComponent(txtTelefono, GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
-						.addComponent(txtNombre, GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE))
-					.addGap(25))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(panelErrorValidar, GroupLayout.PREFERRED_SIZE, 732, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(196)
-					.addComponent(lblDarDeAlta, GroupLayout.PREFERRED_SIZE, 282, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(266, Short.MAX_VALUE))
+					.addComponent(txtNombre, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+					.addContainerGap())
 		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblDarDeAlta, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(lblNombre)
-						.addComponent(txtNombre, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblApellidos, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtApellidos, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(8)
-							.addComponent(lblFecha))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(txtFecha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(txtDireccion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(txtTelefono, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblDireccion)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblTelefono)))
-					.addGap(18)
-					.addComponent(panelErrorValidar, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+					.addContainerGap(22, Short.MAX_VALUE)
+					.addComponent(txtNombre, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
 		);
-		contentPane.setLayout(gl_contentPane);
+		panel.setLayout(gl_panel);
+		
+		JLabel lblApellidos = new JLabel("Apellidos");
+		lblApellidos.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(lblApellidos);
+		
+		JPanel panel_1 = new JPanel();
+		contentPane.add(panel_1);
+		
+		txtApellidos = new JTextField();
+		txtApellidos.setColumns(10);
+		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
+		gl_panel_1.setHorizontalGroup(
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtApellidos, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		gl_panel_1.setVerticalGroup(
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
+					.addContainerGap(22, Short.MAX_VALUE)
+					.addComponent(txtApellidos, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		panel_1.setLayout(gl_panel_1);
+		
+		JLabel lblFecha = new JLabel("Fecha");
+		lblFecha.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(lblFecha);
+		
+		JPanel panel_2 = new JPanel();
+		contentPane.add(panel_2);
+		
+		txtFecha = new JTextField();
+		txtFecha.setColumns(10);
+		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
+		gl_panel_2.setHorizontalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtFecha, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		gl_panel_2.setVerticalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
+					.addContainerGap(22, Short.MAX_VALUE)
+					.addComponent(txtFecha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		panel_2.setLayout(gl_panel_2);
+		
+		JLabel lblDireccion = new JLabel("Direccion");
+		lblDireccion.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(lblDireccion);
+		
+		JPanel panel_3 = new JPanel();
+		contentPane.add(panel_3);
+		
+		txtDireccion = new JTextField();
+		txtDireccion.setColumns(10);
+		GroupLayout gl_panel_3 = new GroupLayout(panel_3);
+		gl_panel_3.setHorizontalGroup(
+			gl_panel_3.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_3.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtDireccion, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		gl_panel_3.setVerticalGroup(
+			gl_panel_3.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel_3.createSequentialGroup()
+					.addContainerGap(22, Short.MAX_VALUE)
+					.addComponent(txtDireccion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		panel_3.setLayout(gl_panel_3);
+		
+		JLabel lblTelefono = new JLabel("Telefono");
+		lblTelefono.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		contentPane.add(lblTelefono);
+		
+		JPanel panel_4 = new JPanel();
+		contentPane.add(panel_4);
+		
+		txtTelefono = new JTextField();
+		txtTelefono.setColumns(10);
+		GroupLayout gl_panel_4 = new GroupLayout(panel_4);
+		gl_panel_4.setHorizontalGroup(
+			gl_panel_4.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_4.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(txtTelefono, GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		gl_panel_4.setVerticalGroup(
+			gl_panel_4.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel_4.createSequentialGroup()
+					.addContainerGap(22, Short.MAX_VALUE)
+					.addComponent(txtTelefono, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		panel_4.setLayout(gl_panel_4);
+		contentPane.add(panelErrorValidar);
 	}
 
 	public JPanel getContentPane() {

@@ -17,6 +17,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
+import java.awt.GridLayout;
 
 public class ResultadoOperacion extends JFrame {
 
@@ -50,52 +51,22 @@ public class ResultadoOperacion extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JLabel lblResultadoOperacion = new JLabel("Resultado operacion");
-		lblResultadoOperacion.setFont(new Font("Tahoma", Font.BOLD, 27));
-		
 		JLabel lblMensaje = new JLabel("Mensaje");
 		lblMensaje.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
 		textField = new JTextField();
 		textField.setEditable(false);
 		textField.setColumns(10);
+		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JButton btnAplicar = new JButton("Aplicar");
+		JLabel lblResultadoOperacion = new JLabel("Resultado operacion");
+		lblResultadoOperacion.setFont(new Font("Tahoma", Font.BOLD, 27));
+		contentPane.add(lblResultadoOperacion);
+		
+		JLabel label_1 = new JLabel("");
+		contentPane.add(label_1);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 732, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblMensaje)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, 585, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(btnAplicar, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(43, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap(278, Short.MAX_VALUE)
-					.addComponent(lblResultadoOperacion)
-					.addGap(276))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(35)
-					.addComponent(lblResultadoOperacion)
-					.addGap(30)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 255, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblMensaje)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnAplicar))
-					.addGap(30))
-		);
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
@@ -114,6 +85,32 @@ public class ResultadoOperacion extends JFrame {
 			}
 		});
 		scrollPane.setViewportView(table);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.add(scrollPane);
+		
+		JLabel label_3 = new JLabel("");
+		contentPane.add(label_3);
+		contentPane.add(lblMensaje);
+		contentPane.add(textField);
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel);
+		
+		JButton btnAplicar = new JButton("Aplicar");
+		GroupLayout gl_panel = new GroupLayout(panel);
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(btnAplicar)
+					.addContainerGap(332, Short.MAX_VALUE))
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(26)
+					.addComponent(btnAplicar)
+					.addContainerGap(56, Short.MAX_VALUE))
+		);
+		panel.setLayout(gl_panel);
 	}
 }

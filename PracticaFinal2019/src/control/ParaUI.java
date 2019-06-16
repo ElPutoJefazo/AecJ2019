@@ -29,7 +29,7 @@ public class ParaUI extends VistaPrincipal  {
 		
 		modificarPaciente.getBtnModificar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//pacienteController.modificarPaciente(paciente, modificarPaciente.getTxtDireccion().getText(), modificarPaciente.getTxtTelefono().getText());
+				pacienteController.modificarPaciente(String id, modificarPaciente.getTxtDireccion().getText(), modificarPaciente.getTxtTelefono().getText());
 			}
 		});
 	

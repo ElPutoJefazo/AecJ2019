@@ -15,9 +15,7 @@ public class Tratamiento {
 		this.fechaFin = fechaFin;
 	}
 
-	public Tratamiento() {
-		super();
-	}
+
 
 	public String getDosis() {
 		return dosis;

@@ -33,15 +33,8 @@ public class MedicoControllerTest {
 		assertTrue(hospital.medicos.size()==0);
 	}
 	
-	@Ignore
-	public void testConsultarDatosPaciente() {
-		// TODO
-	}
 	
-	@Ignore
-	public void testRecetarTratamiento() {
-		// TODO
-	}
+	
 
 	
 	
