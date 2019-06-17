@@ -1,12 +1,18 @@
 package control;
 
+import java.time.LocalDate;
+
+import Fachada.Datos;
 import modelo.Hospital;
 import modelo.Medico;
+import modelo.Paciente;
+import modelo.Tratamiento;
 
 public class MedicoController {
 
 	Hospital hospital;
 	ParaUI paraUI;
+	Datos datos = new Datos();
 	
 	public MedicoController(ParaUI paraUI, Hospital hospital) {
 		super();
@@ -15,21 +21,19 @@ public class MedicoController {
 	}
 
 	public boolean darAltaMedico(Medico medico) {
-		hospital.getMedicos().add(medico);
-		return false;
+		return hospital.getMedicos().add(medico);
 	}
 
 	public boolean darBajaMedico(Medico medico) {
-		hospital.getMedicos().remove(medico);
-		return false;
+		return hospital.getMedicos().remove(medico);
 	}
 
-	private void consultarDatosPaciente(Medico medico) {
-		// TODO
+	private void consultarDatosPaciente(Paciente paciente) {
+		datos.obtenerPaciente(paciente.getId());
 	}
 
-	private void recetarTratamiento(Medico medico) {
-		// TODO
+	private void recetarTratamiento(String dosis, LocalDate fechaInicio, LocalDate fechaFin) {
+		Tratamiento tratamiento = new Tratamiento(dosis, fechaInicio, fechaFin);
 	}
 	
 	private boolean validarMedico(Medico medico) {
