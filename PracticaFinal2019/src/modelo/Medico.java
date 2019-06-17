@@ -16,6 +16,10 @@ public class Medico extends Persona {
 		this.id = id;
 	}
 
+	public Medico() {
+		super();
+	}
+
 	public Especialidad getEspecialidad() {
 		return especialidad;
 	}

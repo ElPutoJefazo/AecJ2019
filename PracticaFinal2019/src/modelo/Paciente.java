@@ -7,13 +7,14 @@ public class Paciente extends Persona {
 	private String id;
 	private LocalDate fechaNacimiento;
 
-	
-
-
 	public Paciente(String nombre, String direccion, String numeroTlf, String id, LocalDate fechaNacimiento) {
 		super(nombre, direccion, numeroTlf);
 		this.id = id;
 		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public Paciente() {
+		super();
 	}
 
 	public String getId() {

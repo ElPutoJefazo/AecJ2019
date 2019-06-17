@@ -10,7 +10,7 @@ import modelo.Medico;
 import modelo.Paciente;
 import vista.panels.VistaPrincipal;
 
-public class ParaUI extends VistaPrincipal  {
+public class ParaUI extends VistaPrincipal {
 
 	private ParaUI myself = this;
 	Hospital hospital;
@@ -20,19 +20,19 @@ public class ParaUI extends VistaPrincipal  {
 	PacienteController pacienteController = new PacienteController(myself, hospital);
 	MedicoController medicoController = new MedicoController(myself, hospital);
 
-
 	public ParaUI() {
 		super();
 		hospital = new Hospital(ListMedicos, ListPacientes, datos);
 		pacienteController = new PacienteController(this, hospital);
 		medicoController = new MedicoController(this, hospital);
-		
+
 		modificarPaciente.getBtnModificar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pacienteController.modificarPaciente(String id, modificarPaciente.getTxtDireccion().getText(), modificarPaciente.getTxtTelefono().getText());
+				pacienteController.modificarPaciente(modificarPaciente.getTxtDireccion().getText(),
+						modificarPaciente.getTxtTelefono().getText());
 			}
 		});
-	
+
 	}
 
 }

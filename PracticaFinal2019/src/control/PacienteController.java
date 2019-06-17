@@ -1,6 +1,9 @@
 package control;
 
+import java.util.ArrayList;
+
 import Fachada.Datos;
+import modelo.Cita;
 import modelo.Hospital;
 import modelo.Paciente;
 import vista.panels.ModificarPaciente;
@@ -32,29 +35,39 @@ public class PacienteController {
 		return datos.grabarPaciente(paciente);
 	}
 
-	private boolean solicitarCita(Paciente paciente) {
-		// TODO
-		return false;
+	private boolean solicitarCita(Cita cita) {
+		boolean respuesta = true;
+		for (Cita citaLista : hospital.getCitas()) {
+			if (citaLista.getFecha() == cita.getFecha()) {
+				respuesta = false;
+			}
+		}
+		return respuesta;
 	}
 
-	private void comprobarCita(Paciente paciente) {
+	private boolean comprobarCita(Cita cita) {
+		return cita.isPendiente();
+	}
+
+	private void asignarCita(Cita cita) {
 		// TODO
 	}
 
-	private void asignarCita(Paciente paciente) {
-		// TODO
-	}
-
-	private void accederCitasPendientes(Paciente paciente) {
+	private void accederCitasPendientes(Cita cita) {
 		// TODO
 	}
 
 	private boolean validarPaciente(Paciente paciente) {
-		// TODO
-		return false;
+		boolean respuesta = false;
+		for (Paciente pacienteLista : hospital.getPacientes()) {
+			if (pacienteLista.equals(paciente)) {
+				respuesta = true;
+			}
+		}
+		return respuesta;
 	}
 
-	private boolean validarCita(Paciente paciente) {
+	private boolean validarCita(Cita cita) {
 		// TODO
 		return false;
 	}

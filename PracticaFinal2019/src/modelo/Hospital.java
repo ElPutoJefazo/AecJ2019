@@ -1,6 +1,7 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import Fachada.Datos;
 
@@ -9,23 +10,34 @@ public class Hospital {
 	public ArrayList<Medico> medicos;
 	public ArrayList<Paciente> pacientes;
 	private Datos datos;
+	private ArrayList<Cita> citas;
 
 	public Hospital(ArrayList<Medico> medicos, ArrayList<Paciente> pacientes, Datos fachada) {
 		super();
 		this.medicos = medicos;
 		this.pacientes = pacientes;
 		this.datos = fachada;
+		this.citas = citas;
 	}
-	
+
 	public Paciente getPaciente(String id) {
-		//Busca el paciente en el arraylist con el id que pasas
-		
-		return null;
+		Paciente pacienteFinal = new Paciente();
+		for (Paciente paciente : pacientes) {
+			if (paciente.getId() == id) {
+				pacienteFinal = paciente;
+			}
+		}
+		return pacienteFinal;
 	}
-	
+
 	public Medico getMedico(String id) {
-		//Busca el medico en el arraylist con el id que pasas
-		return null;
+		Medico medicoFinal = new Medico();
+		for (Medico medico : medicos) {
+			if (medico.getId() == id) {
+				medicoFinal = medico;
+			}
+		}
+		return medicoFinal;
 	}
 
 	public ArrayList<Medico> getMedicos() {
@@ -50,6 +62,14 @@ public class Hospital {
 
 	public void setDatos(Datos datos) {
 		this.datos = datos;
+	}
+
+	public ArrayList<Cita> getCitas() {
+		return citas;
+	}
+
+	public void setCitas(ArrayList<Cita> citas) {
+		this.citas = citas;
 	}
 
 }

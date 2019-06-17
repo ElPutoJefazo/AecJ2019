@@ -20,6 +20,10 @@ public abstract class Persona {
 		this.numeroTlf = numeroTlf;
 	}
 
+	public Persona() {
+		super();
+	}
+
 	public String getDireccion() {
 		return direccion;
 	}

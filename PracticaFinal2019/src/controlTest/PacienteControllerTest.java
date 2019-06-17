@@ -35,7 +35,7 @@ public class PacienteControllerTest {
 	public void testModificarPaciente() {
 		Paciente test = new Paciente("Joaquin", "direccion", "666666666", "1", LocalDate.now());
 		Paciente testDos = new Paciente("Joaquin", "direccion", "666666666", "1", LocalDate.now());
-		pacienteController.modificarPaciente(test);
+		pacienteController.modificarPaciente(test.getId(), test.getDireccion());
 		assertFalse(test==testDos);
 	}
 	
