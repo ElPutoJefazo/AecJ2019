@@ -15,45 +15,43 @@ import modelo.Paciente;
 public class PacienteControllerTest {
 	private PacienteController pacienteController;
 	private Hospital hospital;
-	
+
 	@Test
 	public void testDarAltaPaciente() {
 		Paciente test = new Paciente("Joaquin", "direccion", "666666666", "1", LocalDate.now());
 		pacienteController.darAltaPaciente(test);
-		assertTrue(hospital.pacientes.size()==1);
-}
+		assertTrue(hospital.pacientes.size() == 1);
+	}
+
 	@Ignore
 	public void testDarBajaPaciente() {
-		Paciente test = new Paciente("Joaquin", "direccion", "666666666", "1", LocalDate.now()); 
+		Paciente test = new Paciente("Joaquin", "direccion", "666666666", "1", LocalDate.now());
 		pacienteController.darBajaPaciente(test);
-		assertTrue(hospital.pacientes.size()==1);
+		assertTrue(hospital.pacientes.size() == 1);
 		hospital.pacientes.remove(test);
-		assertTrue(hospital.pacientes.size()==0);
+		assertTrue(hospital.pacientes.size() == 0);
 	}
-	
+
 	@Ignore
 	public void testModificarPaciente() {
 		Paciente test = new Paciente("Joaquin", "direccion", "666666666", "1", LocalDate.now());
 		Paciente testDos = new Paciente("Joaquin", "direccion", "666666666", "1", LocalDate.now());
 		pacienteController.modificarPaciente(test.getId(), test.getDireccion());
-		assertFalse(test==testDos);
+		assertFalse(test == testDos);
 	}
-	
-	
+
 	@Ignore
 	private void testSolicitarCita() {
 		// TODO
 	}
+
 	@Ignore
 	private void testAccederCitasPendientes() {
 		// TODO
 	}
-/*	@Ignore
-	private void testValidarPaciente() {
-		// TODO
-	}
-	@Ignore
-	private void testValidarCita() {
-		// TODO
-	}*/
+	/*
+	 * @Ignore private void testValidarPaciente() { // TODO }
+	 * 
+	 * @Ignore private void testValidarCita() { // TODO }
+	 */
 }
