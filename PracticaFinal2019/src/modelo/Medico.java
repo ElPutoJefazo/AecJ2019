@@ -16,6 +16,11 @@ public class Medico extends Persona {
 		this.id = id;
 	}
 
+	public Medico(String nombre, String direccion, String numeroTlf, Especialidad especialidad) {
+		super(nombre, direccion, numeroTlf);
+		this.especialidad = especialidad;
+	}
+
 	public Medico() {
 		super();
 	}

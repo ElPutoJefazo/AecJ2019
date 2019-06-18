@@ -17,12 +17,15 @@ import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PacienteBaja extends JPanel {
 
 	private JPanel contentPane;
 	protected ValidarError validarError = new ValidarError();
 	protected BuscarPaciente buscarPaciente = new BuscarPaciente();
+	private JButton btnEliminarPaciente;
 
 
 	/**
@@ -64,7 +67,8 @@ public class PacienteBaja extends JPanel {
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
 		
-		JButton btnEliminarPaciente = new JButton("Eliminar paciente");
+		btnEliminarPaciente = new JButton("Eliminar paciente");
+		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
@@ -85,6 +89,10 @@ public class PacienteBaja extends JPanel {
 
 	public JPanel getContentPane() {
 		return contentPane;
+	}
+
+	public JButton getBtnEliminarPaciente() {
+		return btnEliminarPaciente;
 	}
 
 }

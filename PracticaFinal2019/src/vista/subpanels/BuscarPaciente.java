@@ -19,6 +19,8 @@ import java.awt.GridLayout;
 public class BuscarPaciente extends JPanel {
 
 	JPanel panelBuscarPaciente = new JPanel();
+	private JComboBox comboBoxID;
+	private JComboBox comboBoxNombre;
 
 	/**
 	 * Launch the application.
@@ -100,7 +102,7 @@ public class BuscarPaciente extends JPanel {
 		JPanel panel_3 = new JPanel();
 		panelBuscarPaciente.add(panel_3);
 		
-		JComboBox comboBoxID = new JComboBox();
+		comboBoxID = new JComboBox();
 		GroupLayout gl_panel_3 = new GroupLayout(panel_3);
 		gl_panel_3.setHorizontalGroup(
 			gl_panel_3.createParallelGroup(Alignment.LEADING)
@@ -143,7 +145,7 @@ public class BuscarPaciente extends JPanel {
 		JPanel panel_5 = new JPanel();
 		panelBuscarPaciente.add(panel_5);
 		
-		JComboBox comboBoxNombre = new JComboBox();
+		comboBoxNombre = new JComboBox();
 		GroupLayout gl_panel_5 = new GroupLayout(panel_5);
 		gl_panel_5.setHorizontalGroup(
 			gl_panel_5.createParallelGroup(Alignment.LEADING)
@@ -165,4 +167,13 @@ public class BuscarPaciente extends JPanel {
 	public JPanel getPanelBuscarPaciente() {
 		return panelBuscarPaciente;
 	}
+
+	public JComboBox getComboBoxID() {
+		return comboBoxID;
+	}
+
+	public JComboBox getComboBoxNombre() {
+		return comboBoxNombre;
+	}
+	
 }
