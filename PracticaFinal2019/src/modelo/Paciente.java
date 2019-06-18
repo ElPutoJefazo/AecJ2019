@@ -13,6 +13,11 @@ public class Paciente extends Persona {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
+	public Paciente(String nombre, String direccion, String numeroTlf, LocalDate fechaNacimiento) {
+		super(nombre, direccion, numeroTlf);
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
 	public Paciente() {
 		super();
 	}

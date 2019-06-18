@@ -18,6 +18,8 @@ import javax.swing.JComboBox;
 public class BuscarMedico extends JPanel {
 
 	JPanel panelBuscarMedico = new JPanel();
+	private JComboBox comboBoxID;
+	private JComboBox comboBoxNombre;
 
 	/**
 	 * Launch the application.
@@ -49,12 +51,12 @@ public class BuscarMedico extends JPanel {
 		JLabel lblId = new JLabel("ID");
 		lblId.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
-		JComboBox comboBoxID = new JComboBox();
+		comboBoxID = new JComboBox();
 		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		
-		JComboBox comboBoxNombre = new JComboBox();
+		comboBoxNombre = new JComboBox();
 		GroupLayout gl_contentPane = new GroupLayout(panelBuscarMedico);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -100,4 +102,13 @@ public class BuscarMedico extends JPanel {
 	public JPanel getPanelBuscarMedico() {
 		return panelBuscarMedico;
 	}
+
+	public JComboBox getComboBoxID() {
+		return comboBoxID;
+	}
+
+	public JComboBox getComboBoxNombre() {
+		return comboBoxNombre;
+	}
+	
 }

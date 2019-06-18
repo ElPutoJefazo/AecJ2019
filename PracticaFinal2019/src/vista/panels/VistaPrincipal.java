@@ -20,6 +20,8 @@ public class VistaPrincipal extends JFrame {
 	private JPanel contentPane;
 	protected ConsultarCitas consultarCitas = new ConsultarCitas();
 	protected PacienteAlta pacienteAlta = new PacienteAlta();
+	protected MedicoAlta medicoAlta = new MedicoAlta();
+	protected MedicoBaja medicoBaja = new MedicoBaja();
 	protected AtenderCitaMedico atenderCitaMedico = new AtenderCitaMedico();
 	protected ModificarPaciente modificarPaciente = new ModificarPaciente();
 	protected PacienteBaja pacienteBaja = new PacienteBaja();

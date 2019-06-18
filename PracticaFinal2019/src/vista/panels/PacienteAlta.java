@@ -19,6 +19,8 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PacienteAlta extends JPanel {
 	protected ValidarError validarError = new ValidarError();
@@ -28,6 +30,7 @@ public class PacienteAlta extends JPanel {
 	private JTextField txtFecha;
 	private JTextField txtDireccion;
 	private JTextField txtTelefono;
+	private JButton btnDarAltaPaciente;
 
 	/**
 	 * Launch the application.
@@ -197,6 +200,10 @@ public class PacienteAlta extends JPanel {
 		);
 		panel_4.setLayout(gl_panel_4);
 		contentPane.add(panelErrorValidar);
+		
+		btnDarAltaPaciente = new JButton("Dar alta");
+		
+		contentPane.add(btnDarAltaPaciente);
 	}
 
 	public JPanel getContentPane() {
@@ -226,4 +233,10 @@ public class PacienteAlta extends JPanel {
 	public JTextField getTxtTelefono() {
 		return txtTelefono;
 	}
+
+	public JButton getBtnDarAltaPaciente() {
+		return btnDarAltaPaciente;
+	}
+	
+	
 }
